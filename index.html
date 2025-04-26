@@ -3,92 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa en Venta - [Tu Ciudad]</title>
+    <title>Quinta en Venta - Bello Horizonte</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            color: #333;
         }
         header {
-            background: #003366;
+            background: #2c3e50;
             color: #fff;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
         }
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            width: 85%;
+            margin: 0 auto;
+            max-width: 1200px;
         }
         .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
         }
         .gallery img {
-            width: 300px;
-            height: 200px;
+            width: 100%;
+            height: 220px;
             object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.2);
         }
-        .contact-form {
-            background: #f4f4f4;
+        .highlight {
+            background: #f8f9fa;
             padding: 20px;
+            border-left: 4px solid #2c3e50;
+            margin: 20px 0;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .feature-item {
+            background: #e9f7ef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .price-tag {
+            font-size: 1.8em;
+            color: #27ae60;
+            font-weight: bold;
+            text-align: center;
             margin: 20px 0;
         }
         footer {
-            background: #003366;
+            background: #2c3e50;
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .contact-btn {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: background 0.3s;
+        }
+        .contact-btn:hover {
+            background: #219653;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Hermosa Casa en Venta - [Tu Ciudad]</h1>
-        <p>Excelente ubicación, 3 habitaciones, 2 baños, $250,000</p>
+        <h1>Hermosa Quinta en Venta - Bello Horizonte</h1>
+        <p>📍 A solo 2h de Quito 🚗 | Urbanización Bello Horizonte</p>
     </header>
 
     <div class="container">
         <section>
-            <h2>Descripción</h2>
-            <p>Esta espectacular casa cuenta con amplios espacios, jardín, cocina moderna y está ubicada en una zona residencial segura.</p>
-        </section>
-
-        <section>
-            <h2>Galería de Fotos</h2>
-            <div class="gallery">
-                <img src="casa1.jpg" alt="Fachada de la casa">
-                <img src="casa2.jpg" alt="Sala de estar">
-                <img src="casa3.jpg" alt="Cocina">
+            <div class="price-tag">
+                💰 Valor: $255,900 (negociable) 💲
+            </div>
+            
+            <div class="highlight">
+                <h2>🌳 ¡Terreno con arboles frutales, casa de 3 pisos, chozos y areas humedas! 🏡</h2>
+                <p>Ubicación estratégica entre Guayabamba y el Quinche, con fácil acceso dentro de la urbanización de Bello Horizonete ubicada en el pasaje "J".</p>
             </div>
         </section>
 
         <section>
-            <h2>Detalles</h2>
-            <ul>
-                <li><strong>Precio:</strong> $250,000</li>
-                <li><strong>Habitaciones:</strong> 3</li>
-                <li><strong>Baños:</strong> 2</li>
-                <li><strong>Metros cuadrados:</strong> 150 m²</li>
-                <li><strong>Ubicación:</strong> [Dirección exacta o zona]</li>
-            </ul>
+            <h2>✨ Galería de Fotos</h2>
+            <div class="gallery">
+                <img src="images/quinta-fachada.jpg" alt="Fachada de la quinta">
+                <img src="images/sauna.jpg" alt="Sauna y Turco">
+                <img src="images/yacuzzi.jpg" alt="Yacu zzi">
+                <img src="images/habitaciones.jpg" alt="Habitaciones">
+                <img src="images/terraza.jpg" alt="Terraza con vistas">
+                <img src="images/garaje.jpg" alt="Garaje para 3 carros">
+                <img src="images/chozon.jpg" alt="Chozón con horno y parrilla">
+                <img src="images/sala-eventos.jpg" alt="Sala para eventos">
+            </div>
         </section>
 
-        <section class="contact-form">
-            <h2>Contacto</h2>
-            <p>¿Interesado? Contáctame:</p>
-            <p><strong>Teléfono:</strong> +123 456 7890</p>
-            <p><strong>WhatsApp:</strong> <a href="https://wa.me/1234567890">Enviar mensaje</a></p>
-            <p><strong>Correo:</strong> tuemail@example.com</p>
+        <section>
+            <h2>🏆 Características Exclusivas</h2>
+            <div class="features">
+                <div class="feature-item">✅ Sauna y Turco ♨️</div>
+                <div class="feature-item">✅ Yacuzzi para 6 personas 💦</div>
+                <div class="feature-item">✅ 2 habitaciones en primer piso (con 2 baños) 🛏️🚽</div>
+                <div class="feature-item">✅ 4 habitaciones en segundo piso (con 2 baños) 🛌🪞</div>
+                <div class="feature-item">✅ Terraza con vistas 🌄</div>
+                <div class="feature-item">✅ 1,000 m² de terreno con árboles frutales 🌳</div>
+                <div class="feature-item">✅ Bomba de agua independiente 💧</div>
+                <div class="feature-item">✅ Sistema de riego automático 🌱</div>
+                <div class="feature-item">✅ Garaje para 3 carros 🚘</div>
+                <div class="feature-item">✅ Chozón con horno, parrilla y cocina exterior 🍖</div>
+                <div class="feature-item">✅ Sala amplia para eventos (con baño social y minibar) 🍾</div>
+                <div class="feature-item">✅ Cocina equipada (muebles altos/bajos y toma de agua) 🍳</div>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin: 40px 0;">
+            <h2>📞 ¿Interesado?</h2>
+            <p>Contacta al propietario para más información o agendar una visita:</p>
+            <a href="https://wa.me/593963526567" class="contact-btn">WhatsApp 📱</a>
+            <p>📧 Email: seb4s14@gmail.com</p>
+            <p>📞 Teléfono: +593 96 352 6567</p>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 - Venta de Propiedad</p>
+        <p>© 2024 - Venta de Quinta en Bello Horizonte | Todos los derechos reservados</p>
     </footer>
 </body>
 </html>
