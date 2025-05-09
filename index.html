@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quinta en Venta - Bello Horizonte</title>
+    <title>Quinta amoblada en Venta - Bello Horizonte</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -21,8 +21,50 @@
         .container {
             width: 85%;
             margin: 0 auto;
-            max-width: 1200px;
+            max-width: 1200px;            
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            margin-top: 20px;
         }
+        .tab-container {
+            margin: 30px 0;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab-btn {
+            padding: 10px 20px;
+            background: #f1f1f1;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+        }
+        .tab-btn:hover {
+            background: #ddd;
+        }
+        .tab-btn.active {
+            background: #2c3e50;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+            animation: fadeEffect 1s;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -34,7 +76,26 @@
             height: 220px;
             object-fit: cover;
             border-radius: 5px;
-            box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.2);            
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
         }
         .highlight {
             background: #f8f9fa;
@@ -94,7 +155,7 @@
 <body>
     <header>
         <h1>Hermosa Quinta en Venta - Bello Horizonte</h1>
-        <p>📍 A solo 2h de Quito 🚗 | Urbanización Bello Horizonte</p>
+        <p>📍 A solo 45 minutos de Quito 🚗 | Urbanización Bello Horizonte</p>
     </header>
 
     <div class="container">
@@ -104,14 +165,20 @@
             </div>
             
             <div class="highlight">
-                <h2>🌳 ¡Terreno con arboles frutales, casa de 3 pisos, chozos y areas humedas! 🏡</h2>
-                <p>Ubicación estratégica entre Guayabamba y el Quinche, con fácil acceso dentro de la urbanización de Bello Horizonete ubicada en el pasaje "J".</p>
+                <h2>🏡 ¡Casa de 2 pisos + terraza, áreas humedas, sociales y verdes con arboles frutales! 🌳</h2>
+                <p>Ubicación estratégica entre Guayabamba y el Quinche, con fácil acceso por via de piedra y pavimentada, dentro de la urbanización de Bello Horizonete ubicada en el pasaje "J".</p>
             </div>
-        </section>
+                    <!-- Pestañas para Fotos y Video -->
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'fotos')">📸 Fotos</button>
+                <button class="tab-btn" onclick="openTab(event, 'video')">🎥 Video</button>
+            </div>
 
-        <section>
-            <h2>✨ Galería de Fotos</h2>
-            <div class="gallery">
+            <!-- Contenido de Fotos -->
+            <div id="fotos" class="tab-content" style="display: block;">
+                <h2>Galería de Fotos</h2>
+                <div class="gallery">
                 <img src="Imagenes Quinta/Cuarto de visitas primer piso.jpg" alt="Cuarto de visitas primer piso">
                 <img src="Imagenes Quinta/Cuarto de hidromasaje.jpg" alt="Cuarto de hidromasaje">
                 <img src="Imagenes Quinta/Hidromasaje para 6 personas.jpg" alt="Hidromasaje para 6 personas">
@@ -120,24 +187,47 @@
                 <img src="Imagenes Quinta/Chozon donde esta horno.jpg" alt="Chozon donde esta horno">
                 <img src="Imagenes Quinta/Vista de patio trasero.jpg" alt="Vista de patio trasero">
                 <img src="Imagenes Quinta/Patio frontal derecho Quinta.jpg" alt="Patio frontal derecho Quinta">
+                           </div>
             </div>
+
+            <!-- Contenido de Video -->
+            <div id="video" class="tab-content">
+                <h2>Video de la Propiedad</h2>
+                <div class="video-container">
+                    <!-- Reemplaza el enlace con tu video (YouTube o subido a GitHub) -->
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <p style="text-align: center; margin-top: 15px;">Recorrido completo de la propiedad</p>
+            </div>
+        </div>
+
         </section>
 
         <section>
             <h2>🏆 Características Exclusivas</h2>
             <div class="features">
-                <div class="feature-item">✅ Sauna y Turco ♨️</div>
-                <div class="feature-item">✅ Yacuzzi para 6 personas 💦</div>
-                <div class="feature-item">✅ 2 habitaciones en primer piso (con 2 baños) 🛏️🚽</div>
-                <div class="feature-item">✅ 4 habitaciones en segundo piso (con 2 baños) 🛌🪞</div>
-                <div class="feature-item">✅ Terraza con vistas 🌄</div>
-                <div class="feature-item">✅ 1,000 m² de terreno con árboles frutales 🌳</div>
-                <div class="feature-item">✅ Bomba de agua independiente 💧</div>
-                <div class="feature-item">✅ Sistema de riego automático 🌱</div>
                 <div class="feature-item">✅ Garaje para 3 carros 🚘</div>
-                <div class="feature-item">✅ Chozón con horno, parrilla y cocina exterior 🍖</div>
+                <div class="feature-item">✅ Sistema de seguridad por camaras </div>
+                <div class="feature-item">✅ Dos Habitaciones en planta baja 🛏️</div>
+                <div class="feature-item">✅ Tres baños en planta baja 🚽</div>
                 <div class="feature-item">✅ Sala amplia para eventos (con baño social y minibar) 🍾</div>
-                <div class="feature-item">✅ Cocina equipada (muebles altos/bajos y toma de agua) 🍳</div>
+                <div class="feature-item">✅ Cocina con muebles altos y bajos 🍳</div>
+                <div class="feature-item">✅ Cuatro habitaciones en segundo piso con closeths 🛌</div>
+                <div class="feature-item">✅ Dos baños en segundo piso 🚽</div>
+                <div class="feature-item">✅ Sauna y Turco para 6 personas♨️</div>
+                <div class="feature-item">✅ Yacuzzi para 6 personas 💦</div>
+                <div class="feature-item">✅ Cisterna de agua potable 🚰 </div>
+                <div class="feature-item">✅ Bomba de agua independiente 💧</div>
+                <div class="feature-item">✅ Cisterna de agua de riego 🚰 </div>
+                <div class="feature-item">✅ Sistema de riego automático 🌱</div>
+                <div class="feature-item">✅ Chozón con horno, parrilla y cocina exterior 🍖</div>
+                <div class="feature-item">✅ Cuarto de empleada con baño 🛏️</div>
+                <div class="feature-item">✅ Patio con arboles frutales y areas de esparcimiento 🌱</div>
+                
             </div>
         </section>
 
@@ -145,7 +235,7 @@
             <h2>📞 ¿Interesado?</h2>
             <p>Contacta al propietario para más información o agendar una visita:</p>
             <a href="https://wa.me/593963526567" class="contact-btn">WhatsApp 📱</a>
-            <p>📧 Email: seb4s14@gmail.com</p>
+            <p>📧 Email: seb4stian14@yahoo.com</p>
             <p>📞 Teléfono: +593 96 352 6567</p>
         </section>
     </div>
@@ -153,5 +243,27 @@
     <footer>
         <p>© 2024 - Venta de Quinta en Bello Horizonte | Todos los derechos reservados</p>
     </footer>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            
+            // Oculta todos los contenidos de pestañas
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            
+            // Quita la clase 'active' de todos los botones
+            tabbuttons = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+            }
+            
+            // Muestra la pestaña actual y agrega la clase 'active' al botón
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
-</html>
+</html> 
+
